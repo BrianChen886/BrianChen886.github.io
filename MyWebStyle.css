@@ -1,0 +1,161 @@
+/* --- 全域與版心 --- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background: #0f0223;
+  color: #fff;
+}
+:root{
+  --topbar-h: 56px;           /* 固定 topbar 高度（桌機與行動一致） */
+  scrollbar-gutter: stable both-edges;  /* 避免開/關側欄時寬度跳動 */
+}
+
+/* 統一內容寬度（首頁與 CV 一致） */
+section, .container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 16px;
+}
+
+/* --- 頂部導覽（滿版背景；內容與 section/PDF 同寬） --- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  background: #0f0f10;
+  border-bottom: 1px solid #2a2a2a;
+  height: var(--topbar-h);     /* ★ 固定高度 */
+}
+/* 版心：控制 topbar 內容寬度與置中，並排成 左(icon) / 中(brand) / 右(nav) */
+.topbar-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 16px;                 /* 取消上下 padding，避免高度變動 */
+  display: grid;
+  grid-template-columns: 44px 1fr auto; /* ★ 左欄固定 44px，品牌始終可置中 */
+  align-items: center;
+  gap: 12px;
+  min-height: var(--topbar-h);     /* ★ 內部最小高度一致 */
+}
+.contact-icons {
+  display: flex;
+  justify-content: center;   /* 置中 */
+  align-items: center;       /* 垂直置中 */
+  gap: 12px;                 /* icon 之間的距離 */
+  margin-top: 1em;
+}
+.contact-icons img {
+  width: 50px; 
+  height: 50px;
+}
+/* 中：品牌名稱（桌機靠左，小螢幕置中） */
+.brand{ 
+    color:#fff; 
+    font-size: 24px;
+    text-decoration:none; 
+    font-weight:400; 
+    letter-spacing:.3px; 
+    justify-self:start; 
+    white-space: nowrap;
+}
+.brand strong{ font-weight:700; }
+
+/* 右：橫幅選單（桌機顯示，小螢幕隱藏） */
+.nav{ display:flex; gap:16px; justify-self:end; }
+.nav a{ color:#b8c0cc; text-decoration:none; font-size:15px; }
+.nav a:hover, .nav a.active{ color:#5ec4ff; }
+
+/* About 區塊（如果要整塊置中） */
+#about { max-width: 960px; margin: 0 auto; text-align: center; }
+
+/* 頭像：置中 + 圓形裁切 */
+.profile-pic {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 220px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+/* 左：☰ Menu Icon（桌機隱藏，小螢幕顯示；參與 grid 排版） */
+.menu-icon{
+  display: none;                /* 桌機隱藏；小螢幕才顯示 */
+  width: 44px; height: 36px;    /* ★ 固定尺寸，對齊左欄 */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: rgba(34,34,34,.8);
+  color: #fff;
+  padding: 0;                   /* ★ 不讓 padding 影響高度 */
+}
+.menu-icon.hidden { display: none !important; }
+
+/* --- 側欄（抽屜） --- */
+.sidebar {
+  position: fixed;
+  top: 0;                             /* overlay the topbar too */
+  left: 0;
+  height: 100%;
+  width: 0;                           /* closed by default */
+  background-color: #222;
+  overflow-x: hidden;                 /* avoid horizontal scroll */
+  transition: width 0.3s ease;
+  padding-top: var(--topbar-h);       /* leave a clear header area */
+  z-index: 2000;                      /* above the topbar and backdrop */
+  border-right: 1px solid #333;
+}
+.sidebar.open { width: 260px; }
+.sidebar a {
+  display: block;
+  padding: 14px 22px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+}
+.sidebar a:hover { background: #333; }
+.close-btn { position: absolute; top: 8px; right: 12px; font-size: 28px; }
+
+/* --- 遮罩 --- */
+.backdrop {
+  position: fixed;
+  inset: 0;                          /* cover the whole viewport, including topbar */
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(2px);
+  z-index: 1500;                     /* between topbar (1200) and sidebar (2000) */
+  display: none;                      /* hidden by default */
+}
+.backdrop.show { display: block; }
+
+/* --- RWD：<= 860px 顯示 ☰，隱藏橫列；品牌置中 --- */
+@media (max-width: 860px) {
+  .nav { display: none; }
+  .menu-icon { display: flex; }
+  /* keep the same 3-column grid but allow absolute centering of the brand */
+  .topbar-inner{ grid-template-columns: 44px 1fr 0; position: relative; }
+  /* absolutely center the brand so it never drifts left/right */
+  .brand{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-self: center;
+    text-align: center;
+    white-space: nowrap;
+    pointer-events: none; /* let taps on the hamburger work even if text overlaps */
+  }
+}
+
+/* 桌機上完全不需要抽屜與遮罩（保守關閉，避免殘留） */
+@media (min-width: 861px){
+  .sidebar{ display:none; }
+  .backdrop{ display:none !important; }
+}
+/* Desktop keeps fixed topbar height with no changes needed */

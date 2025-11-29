@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brian — Research</title>
+  <link rel="stylesheet" href="../MyWebStyle.css" />
+  <style>
+    body { 
+      background: #0f0223; 
+      color:#eee; margin:0; 
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; }
+    :root { --link: #5ec4ff; }
+
+    /* Page container matches site width */
+    main.research{
+      max-width: 980px;
+      margin: 24px auto 56px;
+      padding: 0 16px;
+    }
+
+    /* Big page title (lowercase like the sample) */
+    main.research h1{
+      font-size: clamp(28px, 6vw, 44px);
+      font-weight: 700;
+      letter-spacing: .5px;
+      margin: 24px 0 16px;
+    }
+
+    /* Section headings */
+    main.research h2{
+      font-size: 24px;
+      font-weight: 600;
+      margin: 28px 0 10px;
+    }
+
+    /* Lists and items */
+    main.research ul{
+      margin: 0 0 28px 1.2em;
+      padding: 0;
+    }
+    main.research li{
+      line-height: 1.65;
+      margin: 10px 0;
+    }
+
+    /* Links like Angel's site */
+    main.research a{
+      color: var(--link);
+      text-decoration: none;
+    }
+    main.research a:hover{
+      text-decoration: underline;
+    }
+
+    /* Small footnote line ("*denote…") */
+    main.research .note{
+      font-size: .95rem;
+      opacity: .85;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <!-- 左：menu（桌機隱藏，小螢幕顯示） -->
+      <button class="menu-icon" id="menuToggle" aria-label="Open menu">☰</button>
+
+      <!-- 中：品牌（小螢幕置中） -->
+      <a class="brand" href="../MyWebStruct.html#about"><strong>Brian</strong> Bo-Hung Chen</a>
+
+      <!-- 右：橫幅導覽（小螢幕隱藏） -->
+      <nav class="nav">
+        <a href="../MyWebStruct.html#about">About</a>
+        <a href="../cv/">CV</a>
+        <a href="#" class="active">Research</a>
+        <a href="../achievement/">Achievement</a>
+      </nav>
+    </div>
+  </header>
+    <nav class="sidebar" id="sidebar">
+        <a href="#" class="close-btn" id="closeBtn">×</a>
+        <a href="../MyWebStruct.html#about">About</a>
+        <a href="../cv/">CV</a>
+        <a href="#" class="active">Research</a>
+        <a href="../achievement/">Achievement</a>
+      </nav>
+      <div class="backdrop"></div>
+
+      <main class="research">
+    <h1>Research</h1>
+
+    <section>
+      <h2>Conference Abstracts</h2>
+      <ul>
+        <li>
+          <strong>Bo‑Hung (Brian) Chen</strong>, C.-H. Tsai, L.-W. Huang, M.-H. Wang, C.-S. Hsu, and Y.-Y. Chen,
+          <a href="ICMST2024 - ROBUST SELF-OCCLUSION MITIGATION FOR ENHANCED ACCURACY IN MULTI-VIEW 3D  MARKERLESS MOTION CAPTURE SYSTEMS.pdf" target="_blank" rel="noopener">Robust Self-Occlusion Mitigation for Enhanced Accuracy in 3D Markerless Motion Capture Systems</a>.
+          <em>International Conference on Movement Science and Technology</em>, Nov 2024
+        </li>
+        <li>
+          M.-H. Wang, K.-T. Tsai, <strong>Bo‑Hung (Brian) Chen</strong>, L.-W. Huang, C.-H. Tsai, C.-S. Hsu, and Y.-Y. Chen,
+          <a href="SEMBA2025 - Markerless Gait Analysis for Lower Back Pain_ A Cost-Effective Solution to Assess  Pelvis-Trunk Coordination.pdf" target="_blank" rel="noopener">Markerless Gait Analysis for Lower Back Pain: A Cost-Effective Solution to Assess Pelvis-Trunk Coordination</a>.
+          <em>Symposium on Engineering, Medicine, and Biology Applications</em>, Jan 2025
+        </li>
+        <li>
+          L.-W. Huang, M.-H. Wang, <strong>Bo‑Hung (Brian) Chen</strong>, K.-H. Su, C.-H. Tsai, Y.-Y. Chen, H.-T. Shih,
+          <a href="ASB2025 - A real-time algorithm for detecting gait events in lower-limb prosthesis users using a markerless motion capture system.pdf" target="_blank" rel="noopener">A Real-Time Algorithm for Detecting Gait Events in Lower-Limb Prosthesis Users Using a Markerless Motion Capture System</a>.
+          <em>American Society of Biomechanics</em>, Aug 2025
+        </li>
+        <li>
+          A.-Y. Huang, M.-H. Wang, L.-W. Huang, <strong>Bo‑Hung (Brian) Chen</strong>, H.-H. Wang, C.-H. Kuo, S.-W. Lu, Y.-C. Lo, and Y.-Y. Chen,
+          <a href="SEMBA2025 - Spatiotemporal Cortical-Synergy Connectivity in the Gait Cycle.pdf" target="_blank" rel="noopener">Spatiotemporal Cortical-Synergy Connectivity in the Gait Cycle</a>.
+          <em>Symposium on Engineering, Medicine, and Biology Applications</em>, Jan 2025
+        </li>
+      </ul>
+    </section>
+  </main>
+      <script src="../MyWebScript.js" defer></script>
+</body>
+</html>

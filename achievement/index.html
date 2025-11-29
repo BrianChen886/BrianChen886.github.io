@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brian — Achievement</title>
+  <link rel="stylesheet" href="../MyWebStyle.css" />
+  <style>
+    body { 
+      background: #0f0223; 
+      color:#eee; margin:0; 
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+    }
+    :root { --link: #5ec4ff; }
+
+    main.achievement{
+      max-width: 980px;
+      margin: 24px auto 56px;
+      padding: 0 16px;
+    }
+
+    main.achievement h1{
+      font-size: clamp(28px, 6vw, 44px);
+      font-weight: 700;
+      letter-spacing: .5px;
+      margin: 24px 0 16px;
+    }
+
+    main.achievement h2{
+      font-size: 24px;
+      font-weight: 600;
+      margin: 28px 0 10px;
+    }
+
+    .achievement-card .meta {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-top: -4px;
+      margin-bottom: 8px;
+    }
+
+    main.achievement p{
+      line-height: 1.65;
+    }
+
+    .achievement-image {
+      width: 100%;
+      max-width: 800px;
+      display: block;
+      margin: 0.5rem 0 1rem 0;
+      border-radius: 8px;
+    }
+
+    .expo-image-row {
+      display: flex;
+      gap: 12px;
+      margin: 8px 0 16px 0;
+    }
+
+    .expo-image-small {
+      width: 48%;
+      border-radius: 8px;
+      display: block;
+    }
+
+    main.achievement a{
+      color: var(--link);
+      text-decoration: none;
+    }
+    main.achievement a:hover{
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <!-- 左：menu（桌機隱藏，小螢幕顯示） -->
+      <button class="menu-icon" id="menuToggle" aria-label="Open menu">☰</button>
+
+      <!-- 中：品牌（小螢幕置中） -->
+      <a class="brand" href="../MyWebStruct.html#about"><strong>Brian</strong> Bo-Hung Chen</a>
+
+      <!-- 右：橫幅導覽（小螢幕隱藏） -->
+      <nav class="nav">
+        <a href="../MyWebStruct.html#about">About</a>
+        <a href="../cv/">CV</a>
+        <a href="../research/">Research</a>        
+        <a href="#" class="active">Achievement</a>
+      </nav>
+    </div>
+  </header>
+  <!-- 手機版側欄（與首頁一致） -->
+  <nav class="sidebar" id="sidebar">
+    <a href="#" class="close-btn" id="closeBtn">×</a>
+    <a href="../MyWebStruct.html#about">About</a>
+    <a href="../cv/">CV</a>
+    <a href="../research/">Research</a>
+    <a href="#" class="active">Achievement</a>
+  </nav>
+  <div class="backdrop"></div>
+  <main class="achievement">
+    <h1>Achievements</h1>
+    <article class="achievement-card">
+        <h2>International Pitch Presentation at Mount Sinai Hospital</h2>
+        <p class="meta">May 2025 · New York, USA</p>
+        <img src="Pitch_professional.jpg" alt="Pitch at Mount Sinai Hospital" class="achievement-image" />
+        <p>
+        Presented our motion capture technology to investors and healthcare innovators, discussing clinical applications
+        in gait and rehabilitation and exploring opportunities for global deployment.
+        </p>
+        <p class="news-links">
+          <a href="https://money.udn.com/money/story/5635/8829504" target="_blank">Economic Daily News</a>
+          &nbsp;|&nbsp;
+          <a href="https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?id=0000725679_42B7VYDB6BEX6ELG3VX7X" target="_blank">DIGITIMES</a>
+        </p>
+    </article>
+
+    <article class="achievement-card">
+        <h2>MOU Signing with Taipei Veterans General Hospital & Institute for Information Industry</h2>
+        <p class="meta">February 2025 · Taipei, Taiwan</p>
+        <img src="MOU_GroupPhoto.jpg" alt="MOU signing ceremony" class="achievement-image" />
+        <p>
+        Established collaborations to advance clinical adoption and translational research for markerless motion analysis,
+        working closely with clinicians and industry partners.
+        </p>
+        
+        <p class="news-links">
+          <a href="https://www.nycu.edu.tw/nycu/en/app/news/view?module=headnews&id=552&serno=56509a5f-cab0-40fc-bc55-084d6b6575bc" target="_blank">NYCU NEWS</a>
+          &nbsp;|&nbsp;
+          <a href="https://www.vghtpe.gov.tw/News!one.action?nid=14316" target="_blank">TVGH</a>
+          &nbsp;|&nbsp;
+          <a href="https://www.chinatimes.com/newspapers/20250220000728-260114?chdtv" target="_blank">China Times</a>          
+          &nbsp;|&nbsp;
+          <a href="https://udn.com/news/story/6928/8558470" target="_blank">United Daily News</a>
+          &nbsp;|&nbsp;
+          <a href="https://health.ettoday.net/news/2911642" target="_blank">ETtoday Health</a>
+          &nbsp;|&nbsp;
+          <a href="https://www.cna.com.tw/news/ahel/202502190249.aspx" target="_blank">Central News Agency</a>
+        </p>
+    </article>
+
+    <article class="achievement-card">
+        <h2>Taiwan Healthcare+ Expo – Live Demo of Markerless Motion Capture System</h2>
+        <p class="meta">December 2024 · Nangang, Taiwan</p>
+        <div class="expo-image-row">
+          <img src="HealthCare Expo+1.jpg" alt="Demo at Taiwan Healthcare+ Expo" class="expo-image-small" />
+          <img src="HealthCare Expo+2.jpg" alt="Demo at Taiwan Healthcare+ Expo 2" class="expo-image-small" />
+        </div>
+        <p>
+        Demonstrated our RGB-Based Multi-View 3D Markerless Motion Capture System to clinicians, industry experts,
+        and the public through live sessions, showcasing its applications in gait analysis and rehabilitation.
+        </p>
+    </article>
+    
+  </main>
+  
+<script src="../MyWebScript.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brian - Portfolio</title>
+  <link rel="stylesheet" href="MyWebStyle.css" />
+</head>
+<body>
+  <!-- 頂部導覽（桌機：橫列；手機：☰） -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <!-- 左：menu（桌機隱藏，小螢幕顯示） -->
+      <button class="menu-icon" id="menuToggle" aria-label="Open menu">☰</button>
+
+      <!-- 中：品牌（小螢幕置中；桌機靠左） -->
+      <a class="brand" href="#about"><strong>Brian</strong> Bo-Hung Chen</a>
+
+      <!-- 右：橫幅導覽（桌機顯示，小螢幕隱藏） -->
+      <nav class="nav">
+        <a href="#about" class="active">About</a>
+        <a href="cv/">CV</a>
+        <a href="research/">Research</a>
+        <a href="achievement">Achievement</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 手機版側欄 -->
+  <nav class="sidebar" id="sidebar">
+    <a href="#" class="close-btn" id="closeBtn">×</a>
+    <a href="#about">About</a>
+    <a href="cv/">CV</a>
+    <a href="research/">Research</a>
+    <a href="achievement">Achievement</a>
+    
+  </nav>
+  <div class="backdrop"></div>
+
+  <!-- About -->
+  <section id="about" class="container">
+    <h1>About</h1>
+    <img src="AutoGraph.jpg" alt="Profile Picture" class="profile-pic" />
+    <p>Hello, I’m Brian. Welcome to my portfolio!</p>
+    
+    <p style="text-align: justify; text-justify: inter-word; line-height: 1.6; margin-bottom: 1.2em;">
+      I am an engineer and researcher pursuing a career in developing intelligent assistive robotic systems, including wearable robotics and assistive living robots that enhance human mobility, independence, and quality of life.
+    </p>
+    <p style="text-align: justify; text-justify: inter-word; line-height: 1.6; margin-bottom: 1.2em;">
+       I am currently a research assistant at the Neurotech Lab (NTK Lab) at National Yang Ming Chiao Tung University, where I also conducted my undergraduate research.
+       My current work includes the commercialization, optimization, and validation of our RGB-Based Multi-View 3D Markerless Motion Capture System. This involves improving system robustness, refining core algorithms, collaborating with hospitals for deployment, and leading a clinical validation study, including preparing the validation manuscript comparing system performance with gold-standard motion analysis tools.
+    </p>
+    <p style="text-align: justify; text-justify: inter-word; line-height: 1.6; margin-bottom: 1.2em;">
+      During my undergraduate research at NTK Lab, I focused on building the system’s core software infrastructure, including extending the pipeline to support multi-person motion capture, developing and implementing the real-time framework, and designing a GUI tailored to clinical and research workflows. In parallel, I contributed to motion-analysis and biomechanics studies across multiple clinical populations—including stroke, sarcopenia, lower back pain, Parkinson’s disease, and Alzheimer’s disease—supporting data collection, kinematic feature extraction, and quantitative evaluation of movement impairments.
+    </p>
+    <div class="contact-icons">
+      <a href="mailto:brianchen88662@gmail.com" aria-label="Email">
+        <img src="EmailIcon.png" alt="Email">
+      </a>
+
+      <a href="https://www.linkedin.com/in/brian-chen-234360305" target="_blank" aria-label="LinkedIn">
+        <img src="LinkedinIcon.png" alt="LinkedIn">
+      </a>
+    </div>
+    
+    <p style="text-align: center;">
+      Welcome to reach out !
+    </p>
+  </section>
+
+  <script src="MyWebScript.js" defer></script>
+</body>
+</html>

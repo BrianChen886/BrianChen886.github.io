@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brian — CV</title>
+  <link rel="stylesheet" href="../MyWebStyle.css" />
+  <style>
+    body { 
+      background: #0f0223; 
+      color:#eee; margin:0; 
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; }
+
+    .cv-wrap{ max-width:980px; 
+      margin:0 auto 16px;  /* 縮小上方間距 */
+      padding:0 16px; 
+      text-align:center; }
+    .download-btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; border:2px solid #2a6fb0; background:transparent; color:#cfe8ff; text-decoration:none; font-weight:600; margin:8px 0 12px; }
+    .download-btn:hover{ background:#123; }
+
+    .pdf-frame{ background:#ffffff; padding:0; border-radius:0; box-shadow:none; overflow:hidden; line-height:0; }
+    .pdf{ display:block; width:100%; height:calc(100vh - var(--topbar-h, 64px)); border:none; background:#fff; border-radius:0; }
+
+    @media (max-width:640px){ .pdf{ height:calc(100vh - var(--topbar-h, 56px)); } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <!-- 左：menu（桌機隱藏，小螢幕顯示） -->
+      <button class="menu-icon" id="menuToggle" aria-label="Open menu">☰</button>
+
+      <!-- 中：品牌（小螢幕置中） -->
+      <a class="brand" href="../MyWebStruct.html#about"><strong>Brian</strong> Bo-Hung Chen</a>
+
+      <!-- 右：橫幅導覽（小螢幕隱藏） -->
+      <nav class="nav">
+        <a href="../MyWebStruct.html#about">About</a>
+        <a href="#" class="active">CV</a>
+        <a href="../research/">Research</a>
+        <a href="../achievement/">Achievement</a>
+      </nav>
+    </div>
+  </header>
+  <!-- 手機版側欄（與首頁一致） -->
+  <nav class="sidebar" id="sidebar">
+    <a href="#" class="close-btn" id="closeBtn">×</a>
+    <a href="../MyWebStruct.html#about">About</a>
+    <a href="#" class="active">CV</a>
+    <a href="../research/">Research</a>
+    <a href="../achievement/">Achievement</a>
+  </nav>
+  <div class="backdrop"></div>
+
+  <main class="cv-wrap">
+    <a class="download-btn" href="Brian_CV.pdf" download>⬇️ DOWNLOAD PDF</a>
+    <div class="pdf-frame">
+      <iframe class="pdf" src="Brian_CV.pdf#toolbar=0&zoom=page-width&view=FitH"></iframe>
+    </div>
+  </main>
+</script>
+<script src="../MyWebScript.js" defer></script>
+<script>
+  (function(){
+    const pdf = document.querySelector('.pdf');
+    const topbar = document.querySelector('.topbar');
+
+    const baseFile = 'Brian_CV.pdf';
+    const hashArgs = '#toolbar=0&zoom=page-width';
+    const buildSrc = () => `${baseFile}?ts=${Date.now()}${hashArgs}`; // cache-bust 用 queryParam，放在 # 之前
+
+    function setTopbarVar(){
+      const h = topbar ? topbar.offsetHeight : 64;
+      document.documentElement.style.setProperty('--topbar-h', h + 'px');
+    }
+
+    function loadFitToWidth(){
+      if (!pdf) return;
+      pdf.src = buildSrc();
+    }
+
+    // 初始化
+    setTopbarVar();
+    loadFitToWidth();
+
+    let t;
+    window.addEventListener('resize', () => {
+      setTopbarVar();
+      clearTimeout(t);
+      t = setTimeout(loadFitToWidth, 120);
+    });
+  })();
+</script>
+</body>
+</html>
