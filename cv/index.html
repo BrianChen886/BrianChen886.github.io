@@ -1,95 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Brian — CV</title>
-  <link rel="stylesheet" href="../MyWebStyle.css" />
-  <style>
-    body { 
-      background: #0f0223; 
-      color:#eee; margin:0; 
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; }
-
-    .cv-wrap{ max-width:980px; 
-      margin:0 auto 16px;  /* 縮小上方間距 */
-      padding:0 16px; 
-      text-align:center; }
-    .download-btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 16px; border-radius:999px; border:2px solid #2a6fb0; background:transparent; color:#cfe8ff; text-decoration:none; font-weight:600; margin:8px 0 12px; }
-    .download-btn:hover{ background:#123; }
-
-    .pdf-frame{ background:#ffffff; padding:0; border-radius:0; box-shadow:none; overflow:hidden; line-height:0; }
-    .pdf{ display:block; width:100%; height:calc(100vh - var(--topbar-h, 64px)); border:none; background:#fff; border-radius:0; }
-
-    @media (max-width:640px){ .pdf{ height:calc(100vh - var(--topbar-h, 56px)); } }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Brian Bo-Hung Chen — engineer and researcher working on assistive robotics, markerless motion capture, and human movement.">
+<meta name="theme-color" content="#f6f5f0">
+<title>CV — Brian Bo-Hung Chen</title>
+<link rel="stylesheet" href="../MyWebStyle.css">
+<script src="../MyWebScript.js" defer>
+</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <!-- 左：menu（桌機隱藏，小螢幕顯示） -->
-      <button class="menu-icon" id="menuToggle" aria-label="Open menu">☰</button>
-
-      <!-- 中：品牌（小螢幕置中） -->
-      <a class="brand" href="../index.html#about"><strong>Brian</strong> Bo-Hung Chen</a>
-
-      <!-- 右：橫幅導覽（小螢幕隱藏） -->
-      <nav class="nav">
-        <a href="../index.html#about">About</a>
-        <a href="#" class="active">CV</a>
-        <a href="../research/">Research</a>
-        <a href="../achievement/">Achievement</a>
-      </nav>
-    </div>
-  </header>
-  <!-- 手機版側欄（與首頁一致） -->
-  <nav class="sidebar" id="sidebar">
-    <a href="#" class="close-btn" id="closeBtn">×</a>
-    <a href="../index.html#about">About</a>
-    <a href="#" class="active">CV</a>
-    <a href="../research/">Research</a>
-    <a href="../achievement/">Achievement</a>
-  </nav>
-  <div class="backdrop"></div>
-
-  <main class="cv-wrap">
-    <a class="download-btn" href="Brian_CV.pdf" download>⬇️ DOWNLOAD PDF</a>
-    <div class="pdf-frame">
-      <iframe class="pdf" src="Brian_CV.pdf#toolbar=0&zoom=page-width&view=FitH"></iframe>
-    </div>
-  </main>
-</script>
-<script src="../MyWebScript.js" defer></script>
-<script>
-  (function(){
-    const pdf = document.querySelector('.pdf');
-    const topbar = document.querySelector('.topbar');
-
-    const baseFile = 'Brian_CV.pdf';
-    const hashArgs = '#toolbar=0&zoom=page-width';
-    const buildSrc = () => `${baseFile}?ts=${Date.now()}${hashArgs}`; // cache-bust 用 queryParam，放在 # 之前
-
-    function setTopbarVar(){
-      const h = topbar ? topbar.offsetHeight : 64;
-      document.documentElement.style.setProperty('--topbar-h', h + 'px');
-    }
-
-    function loadFitToWidth(){
-      if (!pdf) return;
-      pdf.src = buildSrc();
-    }
-
-    // 初始化
-    setTopbarVar();
-    loadFitToWidth();
-
-    let t;
-    window.addEventListener('resize', () => {
-      setTopbarVar();
-      clearTimeout(t);
-      t = setTimeout(loadFitToWidth, 120);
-    });
-  })();
-</script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html" aria-label="Brian Chen home">
+<span class="monogram">bc<span>.</span>
+</span>
+<span>BRIAN CHEN</span>
+</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">＋</span>
+</button>
+<nav id="navigation" aria-label="Main navigation">
+<a href="../index.html">About</a>
+<a href="../research/">Research</a>
+<a href="../achievement/">Achievements</a>
+<a href="../cv/" aria-current="page">CV</a>
+<a class="nav-contact" href="mailto:brianchen88662@gmail.com">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main" class="wrap subpage">
+<div class="page-heading cv-heading">
+<div>
+<p class="eyebrow">BACKGROUND / EXPERIENCE</p>
+<h1>Curriculum <em>vitae.</em>
+</h1>
+<p>A closer look at my research and experience.</p>
+</div>
+<a class="button" href="Brian_CV.pdf" download>Download PDF ↓</a>
+</div>
+<p class="pdf-note">Having trouble with the preview? <a href="Brian_CV.pdf" target="_blank" rel="noopener noreferrer">Open the PDF in a new tab ↗</a>
+</p>
+<iframe class="pdf" src="Brian_CV.pdf#view=FitH" title="Brian Bo-Hung Chen curriculum vitae">
+</iframe>
+</main>
+<footer class="footer">
+<a class="brand" href="../index.html">Brian Bo-Hung Chen<span class="green">.</span>
+</a>
+<span>Robotics. Movement. Human possibility.</span>
+<a href="https://github.com/BrianChen886" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+</footer>
 </body>
 </html>

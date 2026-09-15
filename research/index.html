@@ -1,122 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Brian — Research</title>
-  <link rel="stylesheet" href="../MyWebStyle.css" />
-  <style>
-    body { 
-      background: #0f0223; 
-      color:#eee; margin:0; 
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial; }
-    :root { --link: #5ec4ff; }
-
-    /* Page container matches site width */
-    main.research{
-      max-width: 980px;
-      margin: 24px auto 56px;
-      padding: 0 16px;
-    }
-
-    /* Big page title (lowercase like the sample) */
-    main.research h1{
-      font-size: clamp(28px, 6vw, 44px);
-      font-weight: 700;
-      letter-spacing: .5px;
-      margin: 24px 0 16px;
-    }
-
-    /* Section headings */
-    main.research h2{
-      font-size: 24px;
-      font-weight: 600;
-      margin: 28px 0 10px;
-    }
-
-    /* Lists and items */
-    main.research ul{
-      margin: 0 0 28px 1.2em;
-      padding: 0;
-    }
-    main.research li{
-      line-height: 1.65;
-      margin: 10px 0;
-    }
-
-    /* Links like Angel's site */
-    main.research a{
-      color: var(--link);
-      text-decoration: none;
-    }
-    main.research a:hover{
-      text-decoration: underline;
-    }
-
-    /* Small footnote line ("*denote…") */
-    main.research .note{
-      font-size: .95rem;
-      opacity: .85;
-      margin-top: 8px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Brian Bo-Hung Chen — engineer and researcher working on assistive robotics, markerless motion capture, and human movement.">
+<meta name="theme-color" content="#f6f5f0">
+<title>Research — Brian Bo-Hung Chen</title>
+<link rel="stylesheet" href="../MyWebStyle.css">
+<script src="../MyWebScript.js" defer>
+</script>
 </head>
 <body>
-  <header class="topbar">
-    <div class="topbar-inner">
-      <!-- 左：menu（桌機隱藏，小螢幕顯示） -->
-      <button class="menu-icon" id="menuToggle" aria-label="Open menu">☰</button>
-
-      <!-- 中：品牌（小螢幕置中） -->
-      <a class="brand" href="../index.html#about"><strong>Brian</strong> Bo-Hung Chen</a>
-
-      <!-- 右：橫幅導覽（小螢幕隱藏） -->
-      <nav class="nav">
-        <a href="../index.html#about">About</a>
-        <a href="../cv/">CV</a>
-        <a href="#" class="active">Research</a>
-        <a href="../achievement/">Achievement</a>
-      </nav>
-    </div>
-  </header>
-    <nav class="sidebar" id="sidebar">
-        <a href="#" class="close-btn" id="closeBtn">×</a>
-        <a href="../index.html#about">About</a>
-        <a href="../cv/">CV</a>
-        <a href="#" class="active">Research</a>
-        <a href="../achievement/">Achievement</a>
-      </nav>
-      <div class="backdrop"></div>
-
-      <main class="research">
-    <h1>Research</h1>
-
-    <section>
-      <h2>Conference Abstracts</h2>
-      <ul>
-        <li>
-          <strong>Bo‑Hung (Brian) Chen</strong>, C.-H. Tsai, L.-W. Huang, M.-H. Wang, C.-S. Hsu, and Y.-Y. Chen,
-          <a href="ICMST2024 - ROBUST SELF-OCCLUSION MITIGATION FOR ENHANCED ACCURACY IN MULTI-VIEW 3D  MARKERLESS MOTION CAPTURE SYSTEMS.pdf" target="_blank" rel="noopener">Robust Self-Occlusion Mitigation for Enhanced Accuracy in 3D Markerless Motion Capture Systems</a>.
-          <em>International Conference on Movement Science and Technology</em>, Nov 2024
-        </li>
-        <li>
-          M.-H. Wang, K.-T. Tsai, <strong>Bo‑Hung (Brian) Chen</strong>, L.-W. Huang, C.-H. Tsai, C.-S. Hsu, and Y.-Y. Chen,
-          <a href="SEMBA2025 - Markerless Gait Analysis for Lower Back Pain_ A Cost-Effective Solution to Assess  Pelvis-Trunk Coordination.pdf" target="_blank" rel="noopener">Markerless Gait Analysis for Lower Back Pain: A Cost-Effective Solution to Assess Pelvis-Trunk Coordination</a>.
-          <em>Symposium on Engineering, Medicine, and Biology Applications</em>, Jan 2025
-        </li>
-        <li>
-          L.-W. Huang, M.-H. Wang, <strong>Bo‑Hung (Brian) Chen</strong>, K.-H. Su, C.-H. Tsai, Y.-Y. Chen, H.-T. Shih,
-          <a href="ASB2025 - A real-time algorithm for detecting gait events in lower-limb prosthesis users using a markerless motion capture system.pdf" target="_blank" rel="noopener">A Real-Time Algorithm for Detecting Gait Events in Lower-Limb Prosthesis Users Using a Markerless Motion Capture System</a>.
-          <em>American Society of Biomechanics</em>, Aug 2025
-        </li>
-        <li>
-          A.-Y. Huang, M.-H. Wang, L.-W. Huang, <strong>Bo‑Hung (Brian) Chen</strong>, H.-H. Wang, C.-H. Kuo, S.-W. Lu, Y.-C. Lo, and Y.-Y. Chen,
-          <a href="SEMBA2025 - Spatiotemporal Cortical-Synergy Connectivity in the Gait Cycle.pdf" target="_blank" rel="noopener">Spatiotemporal Cortical-Synergy Connectivity in the Gait Cycle</a>.
-          <em>Symposium on Engineering, Medicine, and Biology Applications</em>, Jan 2025
-        </li>
-      </ul>
-    </section>
-  </main>
-      <script src="../MyWebScript.js" defer></script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+<div class="topbar-inner">
+<a class="brand" href="../index.html" aria-label="Brian Chen home">
+<span class="monogram">bc<span>.</span>
+</span>
+<span>BRIAN CHEN</span>
+</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span aria-hidden="true">＋</span>
+</button>
+<nav id="navigation" aria-label="Main navigation">
+<a href="../index.html">About</a>
+<a href="../research/" aria-current="page">Research</a>
+<a href="../achievement/">Achievements</a>
+<a href="../cv/">CV</a>
+<a class="nav-contact" href="mailto:brianchen88662@gmail.com">Let’s talk <span aria-hidden="true">↗</span>
+</a>
+</nav>
+</div>
+</header>
+<main id="main" class="wrap subpage">
+<div class="page-heading">
+<p class="eyebrow">RESEARCH / PUBLICATIONS</p>
+<h1>Ideas in <em>motion.</em>
+</h1>
+<p>Exploring human movement through computer vision,<br>biomechanics, and intelligent systems.</p>
+</div>
+<div class="publication-heading">
+<h2>Conference abstracts</h2>
+<span class="tiny-label">2024 — 2025 / 04 ABSTRACTS</span>
+</div>
+<div class="publications">
+<article class="publication">
+<span class="index">01</span>
+<div>
+<p class="eyebrow">Nov 2024</p>
+<h3>
+<a href="ICMST2024 - ROBUST SELF-OCCLUSION MITIGATION FOR ENHANCED ACCURACY IN MULTI-VIEW 3D  MARKERLESS MOTION CAPTURE SYSTEMS.pdf" target="_blank" rel="noopener">Robust Self-Occlusion Mitigation for Enhanced Accuracy in 3D Markerless Motion Capture Systems</a>
+</h3>
+<p class="authors">
+<strong>Bo‑Hung (Brian) Chen</strong>, C.-H. Tsai, L.-W. Huang, M.-H. Wang, C.-S. Hsu, and Y.-Y. Chen</p>
+<p class="venue">International Conference on Movement Science and Technology</p>
+</div>
+<span class="publication-arrow" aria-hidden="true">↗</span>
+</article>
+<article class="publication">
+<span class="index">02</span>
+<div>
+<p class="eyebrow">Jan 2025</p>
+<h3>
+<a href="SEMBA2025 - Markerless Gait Analysis for Lower Back Pain_ A Cost-Effective Solution to Assess  Pelvis-Trunk Coordination.pdf" target="_blank" rel="noopener">Markerless Gait Analysis for Lower Back Pain: A Cost-Effective Solution to Assess Pelvis-Trunk Coordination</a>
+</h3>
+<p class="authors">M.-H. Wang, K.-T. Tsai, <strong>Bo‑Hung (Brian) Chen</strong>, L.-W. Huang, C.-H. Tsai, C.-S. Hsu, and Y.-Y. Chen</p>
+<p class="venue">Symposium on Engineering, Medicine, and Biology Applications</p>
+</div>
+<span class="publication-arrow" aria-hidden="true">↗</span>
+</article>
+<article class="publication">
+<span class="index">03</span>
+<div>
+<p class="eyebrow">Aug 2025</p>
+<h3>
+<a href="ASB2025 - A real-time algorithm for detecting gait events in lower-limb prosthesis users using a markerless motion capture system.pdf" target="_blank" rel="noopener">A Real-Time Algorithm for Detecting Gait Events in Lower-Limb Prosthesis Users Using a Markerless Motion Capture System</a>
+</h3>
+<p class="authors">L.-W. Huang, M.-H. Wang, <strong>Bo‑Hung (Brian) Chen</strong>, K.-H. Su, C.-H. Tsai, Y.-Y. Chen, H.-T. Shih</p>
+<p class="venue">American Society of Biomechanics</p>
+</div>
+<span class="publication-arrow" aria-hidden="true">↗</span>
+</article>
+<article class="publication">
+<span class="index">04</span>
+<div>
+<p class="eyebrow">Jan 2025</p>
+<h3>
+<a href="SEMBA2025 - Spatiotemporal Cortical-Synergy Connectivity in the Gait Cycle.pdf" target="_blank" rel="noopener">Spatiotemporal Cortical-Synergy Connectivity in the Gait Cycle</a>
+</h3>
+<p class="authors">A.-Y. Huang, M.-H. Wang, L.-W. Huang, <strong>Bo‑Hung (Brian) Chen</strong>, H.-H. Wang, C.-H. Kuo, S.-W. Lu, Y.-C. Lo, and Y.-Y. Chen</p>
+<p class="venue">Symposium on Engineering, Medicine, and Biology Applications</p>
+</div>
+<span class="publication-arrow" aria-hidden="true">↗</span>
+</article>
+</div>
+</main>
+<footer class="footer">
+<a class="brand" href="../index.html">Brian Bo-Hung Chen<span class="green">.</span>
+</a>
+<span>Robotics. Movement. Human possibility.</span>
+<a href="https://github.com/BrianChen886" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+</footer>
 </body>
 </html>
